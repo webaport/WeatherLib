@@ -46,6 +46,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
+import android.net.Uri;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -89,7 +90,7 @@ public class SearchLocationActivity extends Activity {
 			@Override
 			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 				if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    search(v.getText().toString());
+                    search(Uri.encode(v.getText().toString()));
 					return true;
 				}
 				
